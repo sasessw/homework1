@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gerdon/CLionProjects/template_stack/include/t_stack.h
+iterator
+-
+
+/home/gerdon/CLionProjects/template_stack/sources/main.cpp
+iostream
+-
+../include/t_stack.h
+/home/gerdon/CLionProjects/template_stack/include/t_stack.h
+
