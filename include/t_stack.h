@@ -55,18 +55,11 @@ stack<T>& stack<T>::operator=(const stack<T> & a) noexcept {
 }
 
 template <typename T>
-stack<T>::stack(stack<T>&& a) noexcept{
-    T* pOrig = array_;  //scott meyers Item 11:Handle assignment to self in operator=
-    array_ = new T(*a.array_);
-    delete pOrig;
-    array_ = a.array_;
-    count_ = a.count_;
+stack<T>::stack(stack<T>&& a) : array_ {a.array_}, count_{a.count_} noexcept{
     delete[] a.array_size_;
     a.array_ = nullptr;
     count_ = nullptr;
 }
-
-
 
 template <typename T>
 stack<T>::stack(const stack<T>& a) noexcept {
