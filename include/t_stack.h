@@ -46,11 +46,8 @@ stack<T>& stack<T>::operator=(const stack<T> & a) noexcept {
     delete pOrig;
 
     array_size_ = a.array_size_;
-    array_ = a.array_;
     count_ = a.count_;
-    delete[] a.array_size_;
-    a.array_ = nullptr;
-    count_ = nullptr;
+    std::copy(std::begin(array_), std::end(array_), std::begin(a.array_));
     return *this;
 }
 
