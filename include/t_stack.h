@@ -32,7 +32,7 @@ stack<T>& stack<T>::operator=(stack<T> && a) noexcept {
 
     array_ = a.array_;
     count_ = a.count_;
-    delete[] a.array_size_;
+    a.array_size_ = nullptr;
     a.array_ = nullptr;
     count_ = nullptr;
     return *this;
@@ -53,7 +53,7 @@ stack<T>& stack<T>::operator=(const stack<T> & a) noexcept {
 
 template <typename T>
 stack<T>::stack(stack<T>&& a) : array_ {a.array_}, count_{a.count_} noexcept{
-    delete[] a.array_size_;
+    a.array_size_ = nullptr;
     a.array_ = nullptr;
     count_ = nullptr;
 }
