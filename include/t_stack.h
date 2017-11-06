@@ -34,7 +34,7 @@ stack<T>& stack<T>::operator=(stack<T> && a) noexcept {
     count_ = a.count_;
     a.array_size_ = nullptr;
     a.array_ = nullptr;
-    count_ = nullptr;
+    a.count_ = nullptr;
     return *this;
 };
 
@@ -55,7 +55,7 @@ template <typename T>
 stack<T>::stack(stack<T>&& a) : array_ {a.array_}, count_{a.count_} noexcept{
     a.array_size_ = nullptr;
     a.array_ = nullptr;
-    count_ = nullptr;
+    a.count_ = nullptr;
 }
 
 template <typename T>
